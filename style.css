@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'nav'
+        'main'
+        'footer';
+    background-color: skyblue;
+}
+
+header {
+    grid-area: header;
+    height: 20px;
+    display: flex;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+}
+
+main {
+    grid-area: main;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
