@@ -1,1 +1,3 @@
-https://meyerweb.com/eric/tools/css/reset/
+https://www.gocruisers.org/
+
+https://www.mcseaglesoh.org/
