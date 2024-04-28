@@ -27,9 +27,20 @@ a:hover {
 header {
     grid-area: header;
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 30px;
+}
+
+.logo {
+    align-self: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header>a:last-child {
+    align-self: center;
+    justify-content: end;
+    margin-right: 20px;
 }
 
 header,
