@@ -60,9 +60,7 @@ nav {
 main {
     grid-area: main;
     height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
 }
 
 footer {
@@ -88,4 +86,128 @@ img {
 
 .logo-title h1 {
     margin: 0;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+
+.about-text {
+    border: 1px solid black;
+    margin: 20px 0px 20px 20px;
+    border-radius: 10px;
+}
+
+.about-text>p {
+    padding: 20px 20px 20px 20px;
+}
+
+.about-image {
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    margin: 20px 0px 20px 20px;
+    border-radius: 10px;
+}
+
+.about-image>img {
+    border-radius: 10px;
+}
+
+.parents-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+}
+
+.panel {
+    border-radius: 10px;
+    background-color: lightgray;
+    border: 1px solid black;
+    height: 100px;
+    width: auto;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+.parent-form {
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #99bee2;
+    display: flex;
+    flex-direction: column;
+    /* height: 500px; */
+    /* width: auto; */
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px 20px 20px 20px; */
+    margin: 20px 20px 20px 20px;
+}
+
+.parent-form>span {
+    padding: 10px 0 10px 0;
+}
+
+.parent-form>span>input:first-child {
+    margin-right: 5px;
+}
+
+.parent-form>span>input:last-child {
+    margin-left: 5px;
+}
+
+.parent-form input {
+    /* height: 40px; */
+    border-radius: 5px;
+    border: 1px solid blue;
+}
+
+.btn {
+    color: white;
+    text-decoration: none;
+    background-color: royalblue;
+    width: 100px;
+    height: 30px;
+}
+
+.input-text {
+    height: 30px;
+    text-align: center;
+}
+
+span.address>input {
+    width: 295px;
+}
+
+.feedback {
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(251, 159, 119);
+    border: 1px solid black;
+    width: auto;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+    text-align: center;
+}
+
+.supplies-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supplies-content>table {
+    width: 100%;
+}
+
+.supplies-content tr {
+    text-align: center;
+}
+
+.supplies-content th,
+.supplies-content td {
+    padding: 15px;
 }

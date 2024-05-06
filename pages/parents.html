@@ -25,9 +25,60 @@
         <a href="/pages/info.html">Request Info</a>
     </nav>
     <main>
-        Content for parents
+        <div class="parents-content">
+            <div class="panel">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nostrum deleniti perferendis, modi ea
+                    aspernatur quas magni tempora fugit, adipisci consectetur officiis repellat illo. At magni illum
+                    deserunt provident. Ipsa!
+                </p>
+            </div>
+            <form class="parent-form">
+                <span class="name-fields">
+                    <input class="input-text" type="text" name="firstName" id="firstName" placeholder="First Name">
+                    <input class="input-text" type="text" name="lastName" id="lastName" placeholder="Last Name">
+                </span>
+                <span class="address">
+                    <input class="input-text" type="text" name="address" id="address" placeholder="Address">
+                </span>
+                <span>
+                    <button id="submitButton" class="btn" type="submit">Submit</button>
+                </span>
+            </form>
+            <div class="feedback"></div>
+        </div>
     </main>
     <footer>IWU</footer>
+    <script>
+        const submitButton = document.getElementById('submitButton');
+
+        function errorFeedback(element) {
+            element.style.display = 'inline';
+            element.textContent = 'Please provide all fields before submission.';
+            element.style.backgroundColor = 'rgb(251, 159, 119)';
+        }
+
+        function successFeedback(element) {
+            element.style.display = 'inline';
+            element.textContent = 'Submitted!'
+            element.style.backgroundColor = '#3fb35a';
+        }
+
+        submitButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            const form = document.querySelector('.parent-form');
+            const firstName = form[0].value || "";
+            const lastName = form[1].value || "";
+            const address = form[2].value || "";
+            const feedback = document.querySelector('.feedback');
+
+            if (!firstName.length || !lastName.length || !address.length) {
+                errorFeedback(feedback);
+            } else {
+                successFeedback(feedback);
+            }
+        });
+    </script>
 </body>
 
 </html>
