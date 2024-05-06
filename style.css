@@ -37,11 +37,11 @@ header {
     justify-content: center;
 }
 
-header>a:last-child {
+/* header>a:last-child {
     align-self: center;
     justify-content: end;
     margin-right: 20px;
-}
+} */
 
 header,
 nav {
@@ -72,4 +72,20 @@ footer {
     align-items: center;
     padding: 20px 0px 20px 0px;
     background-color: cornflowerblue;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.logo-title {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    color: white;
+}
+
+.logo-title h1 {
+    margin: 0;
 }
