@@ -35,13 +35,22 @@
             </div>
             <form class="parent-form">
                 <span class="name-fields">
-                    <input class="input-text" type="text" name="firstName" id="firstName" placeholder="First Name">
-                    <input class="input-text" type="text" name="lastName" id="lastName" placeholder="Last Name">
+                    <input class="input-text" type="text" name="name" id="name" placeholder="Name">
                 </span>
-                <span class="address">
-                    <input class="input-text" type="text" name="address" id="address" placeholder="Address">
+                <span class="email">
+                    <input class="input-text" type="text" name="email" id="email" placeholder="Email">
                 </span>
                 <span>
+                    Contact type:
+                    <input type="radio" id="email" name="contact_type" value="email">
+                    <label for="email">Email</label>
+                    <input type="radio" id="text" name="contact_type" value="text">
+                    <label for="text">Text</label>
+                    <input type="radio" id="other" name="contact_type" value="other">
+                    <label for="other">Other</label>
+                </span>
+                <span>
+                    <button id="cancelButton" class="btn" type="reset">Cancel</button>
                     <button id="submitButton" class="btn" type="submit">Submit</button>
                 </span>
             </form>
@@ -67,12 +76,18 @@
         submitButton.addEventListener('click', function (event) {
             event.preventDefault();
             const form = document.querySelector('.parent-form');
-            const firstName = form[0].value || "";
-            const lastName = form[1].value || "";
-            const address = form[2].value || "";
+            const name = form[0].value || "";
+            const email = form[1].value || "";
             const feedback = document.querySelector('.feedback');
+            
+            // check that an option has been selected
+            if (form[2].checked || form[3].checked || form[4].checked) {
+                errorFeedback(feedback);
+            }
 
-            if (!firstName.length || !lastName.length || !address.length) {
+            console.info({ form });
+
+            if (!name.length || !email.length) {
                 errorFeedback(feedback);
             } else {
                 successFeedback(feedback);

@@ -178,7 +178,7 @@ img {
     text-align: center;
 }
 
-span.address>input {
+span>input.input-text {
     width: 295px;
 }
 
