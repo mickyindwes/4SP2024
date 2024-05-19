@@ -38,15 +38,15 @@
                     <input class="input-text" type="text" name="name" id="name" placeholder="Name">
                 </span>
                 <span class="email">
-                    <input class="input-text" type="text" name="email" id="email" placeholder="Email">
+                    <input class="input-text" type="email" name="email" id="email" placeholder="Email">
                 </span>
                 <span>
                     Contact type:
-                    <input type="radio" id="email" name="contact_type" value="email">
+                    <input type="radio" id="radio-email-input" name="contact_type" value="email">
                     <label for="email">Email</label>
-                    <input type="radio" id="text" name="contact_type" value="text">
+                    <input type="radio" id="radio-text-input" name="contact_type" value="text">
                     <label for="text">Text</label>
-                    <input type="radio" id="other" name="contact_type" value="other">
+                    <input type="radio" id="radio-other-input" name="contact_type" value="other">
                     <label for="other">Other</label>
                 </span>
                 <span>
@@ -79,10 +79,12 @@
             const name = form[0].value || "";
             const email = form[1].value || "";
             const feedback = document.querySelector('.feedback');
+            const validRadioFeedback = form[2].checked || form[3].checked || form[4].checked;
             
-            // check that an option has been selected
-            if (form[2].checked || form[3].checked || form[4].checked) {
+            
+            if (!validRadioFeedback) {
                 errorFeedback(feedback);
+                return;
             }
 
             console.info({ form });
