@@ -35,19 +35,19 @@
             </div>
             <form class="parent-form">
                 <span class="name-fields">
-                    <input class="input-text" type="text" name="name" id="name" placeholder="Name">
+                    <input class="input-text" type="text" name="name" id="name" placeholder="Name" required>
                 </span>
                 <span class="email">
-                    <input class="input-text" type="email" name="email" id="email" placeholder="Email">
+                    <input class="input-text" type="email" name="email" id="email" placeholder="Email" required>
                 </span>
                 <span>
                     Contact type:
                     <input type="radio" id="radio-email-input" name="contact_type" value="email">
-                    <label for="email">Email</label>
+                    <label for="radio-email-input">Email</label>
                     <input type="radio" id="radio-text-input" name="contact_type" value="text">
-                    <label for="text">Text</label>
+                    <label for="radio-text-input">Text</label>
                     <input type="radio" id="radio-other-input" name="contact_type" value="other">
-                    <label for="other">Other</label>
+                    <label for="radio-other-input">Other</label>
                 </span>
                 <span>
                     <button id="cancelButton" class="btn" type="reset">Cancel</button>
