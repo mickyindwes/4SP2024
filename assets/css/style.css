@@ -139,11 +139,8 @@ img {
     background-color: #99bee2;
     display: flex;
     flex-direction: column;
-    /* height: 500px; */
-    /* width: auto; */
     justify-content: center;
     align-items: center;
-    /* padding: 20px 20px 20px 20px; */
     margin: 20px 20px 20px 20px;
 }
 
@@ -160,7 +157,6 @@ img {
 }
 
 .parent-form input {
-    /* height: 40px; */
     border-radius: 5px;
     border: 1px solid blue;
 }
@@ -191,23 +187,4 @@ span>input.input-text {
     padding: 20px 20px 20px 20px;
     margin: 20px 20px 20px 20px;
     text-align: center;
-}
-
-.supplies-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.supplies-content>table {
-    width: 100%;
-}
-
-.supplies-content tr {
-    text-align: center;
-}
-
-.supplies-content th,
-.supplies-content td {
-    padding: 15px;
 }

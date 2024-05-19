@@ -8,6 +8,7 @@
     <meta name="keywords" content="school, supply, kit, preschool, kindergarten, first grade">
     <meta name="author" content="School Supply Kit">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets//css//supplies.css">
     <title>School Supply Kit</title>
 </head>
 
@@ -29,33 +30,148 @@
     </nav>
     <main>
         <div class="supplies-content">
-            <table>
+            <div class="panel">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nostrum deleniti perferendis, modi ea
+                    aspernatur quas magni tempora fugit, adipisci consectetur officiis repellat illo. At magni illum
+                    deserunt provident. Ipsa!
+                </p>
+            </div>
+            <div class="supplies-panel">
+                <form id="supplies-form">
+                    <span class="name-fields">
+                        <input class="input-text" type="text" name="school-name" id="school-name"
+                            placeholder="School Name" required>
+                    </span>
+                    <span class="school-list-fields">
+                        <li>Groveport</li>
+                        <li>Madison</li>
+                        <li>Cardington</li>
+                    </span>
+                </form>
+                <table id="supplies-data-table">
                     <tr>
                         <th>Name</th>
                         <th>School</th>
                         <th>Price</th>
                     </tr>
-                    <tr>
-                        <td>Pencil</td>
-                        <td>Groveport</td>
-                        <td>$1</td>
-                    </tr>
-                    <tr>
-                        <td>Pencil</td>
-                        <td>Madison</td>
-                        <td>$.99</td>
-                    </tr>
-                    <tr>
-                        <td>Pencil</td>
-                        <td>Cardington</td>
-                        <td>$1.05</td>
-                    </tr>
-            </table>
+                </table>
+            </div>
         </div>
     </main>
     <footer>IWU</footer>
     <script>
-        // TODO: dynamically render table data
+        /**
+         * Initializes the table data based on the value of the provided element.
+         * 
+         * If the element has a value, it filters the data by school name using the element's value.
+         * Otherwise, it retrieves the full data set.
+         * Finally, it renders the table content with the resulting data.
+         *
+         * @param {HTMLElement} el - The HTML element containing the value to filter by.
+         */
+        function init(el) {
+            let data = [];
+            removeTableContent();
+
+            if (el.value && el.value.length) {
+                data = filterDataBySchoolName(getData())(el.value);
+            } else {
+                data = getData();
+            }
+
+            renderTableContent(data);
+        }
+
+        /**
+         * Filters an array of data by the 'school' field.
+         * 
+         * @param {Array} data - a list of potential table data. Default '[]'.
+         */
+        function filterDataBySchoolName(data = []) {
+            return (search) => data.filter((field) => field.school === search);
+        }
+
+        /**
+         * Renders table content based on the provided data array.
+         * 
+         * This function populates the table with ID 'supplies-data-table' by creating
+         * table rows and cells for each item in the data array and appending them to the table.
+         *
+         * @param {Object[]} data - The array of objects representing the table data.
+         * @param {string} data[].name - The name of the supply.
+         * @param {string} data[].school - The school associated with the supply.
+         * @param {string} data[].price - The price of the supply.
+         */
+        function renderTableContent(data) {
+            const table = document.getElementById('supplies-data-table');
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+
+                for (let key in item) {
+                    const cell = document.createElement('td');
+                    cell.textContent = item[key];
+                    row.appendChild(cell);
+                }
+
+                table.appendChild(row);
+            });
+        }
+
+        /*
+         * Removes existing content from the table
+         */
+        function removeTableContent() {
+            const table = document.getElementById('supplies-data-table');
+
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+        }
+
+        /*
+         * Returns data as if it were being queried from an API
+         */
+        function getData() {
+            return [
+                {
+                    "name": "Pencil",
+                    "school": "Groveport",
+                    "price": "$1"
+                },
+                {
+                    "name": "Pencil",
+                    "school": "Madison",
+                    "price": "$.99"
+                },
+                {
+                    "name": "Pencil",
+                    "school": "Cardington",
+                    "price": "$1.05"
+                }
+            ];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const schoolNameEl = document.getElementById('school-name');
+
+            // Fake data from API
+            init(schoolNameEl);
+
+            schoolNameEl.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+
+                    if (schoolNameEl.value && schoolNameEl.value.length) {
+                        removeTableContent();
+                        renderTableContent(filterDataBySchoolName(getData())(schoolNameEl.value));
+                    } else {
+                        init(schoolNameEl);
+                    }
+                }
+            });
+        });
     </script>
 </body>
 
