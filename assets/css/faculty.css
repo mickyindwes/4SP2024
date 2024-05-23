@@ -1,0 +1,29 @@
+.faculty-panel {
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #99bee2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px 20px 20px 20px;
+}
+
+#faculty-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text {
+    margin: 10px 10px 10px 10px;
+}
+
+#add-contact {
+    width: auto;
+    padding: 0 5px 0 5px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}

@@ -8,6 +8,7 @@
     <meta name="keywords" content="school, supply, kit, preschool, kindergarten, first grade">
     <meta name="author" content="School Supply Kit">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets//css//faculty.css">
     <title>School Supply Kit</title>
 </head>
 
@@ -28,9 +29,89 @@
         <a href="info.html">Request Info</a>
     </nav>
     <main>
-        Conent for faculty members
+        <div class="faculty-content">
+            <div class="panel">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elitCorrupti dolore corporis eum
+                    fuga modi,
+                    quod sapiente voluptatem quos? Quidem minus nihil facilis ipsam laboriosam accusamus ullam
+                    recusandae natus tenetur ab! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+                    laudantium inventore cum, sed nam iusto animi ullam voluptatem adipisci numquam earum quasi sequi
+                    reprehenderit vero ipsam provident repellendus enim neque
+                </p>
+            </div>
+            <div class="faculty-panel">
+                <form id="faculty-form">
+                    <input class="input-text" type="text" name="schoolName" id="schoolName" placeholder="School Name"
+                        required>
+                    <input class="input-text" type="text" name="address" id="address" placeholder="School Address"
+                        required>
+                    <span class="contact-info">
+                        <input class="input-text" type="text" name="contactName1" id="contactName1"
+                            placeholder="Contact Name" required>
+                        <input class="input-text" type="text" name="contentPhone1" id="contentPhone1"
+                            placeholder="Content Phone" required>
+                    </span>
+                    <span class="options">
+                        <button class="btn" type="button" id="add-contact">Add Additional Contact</button>
+                        <button class="btn" type="submit">Submit</button>
+                    </span>
+                </form>
+            </div>
+        </div>
     </main>
     <footer>IWU</footer>
+    <script>
+        /**
+         * A shorthand function for `document.querySelector`, bound to the `document` context.
+         * This function takes a CSS selector string and returns the first Element within the document
+         * that matches the specified selector, or null if no matches are found.
+         * 
+         * @type {function(string): Element|null}
+         * @param {string} selector - A CSS selector string.
+         * @returns {Element|null} - The first matching element, or null if no matches are found.
+         */
+        let $ = document.querySelector.bind(document);
+
+        function createInput(index, name, placeholder) {
+            const input = document.createElement('input');
+            input.classList = ['input-text'];
+            input.type = 'text';
+            input.name = name + (index + 1);
+            input.placeholder = placeholder;
+            input.id = name + (index + 1);
+            input.setAttribute('required', 'required');
+
+            return input;
+        }
+
+        $('#add-contact').addEventListener('click', () => {
+            console.info('CLICKED');
+            const contactInfo = $('.contact-info');
+            const span = document.createElement('span');
+            span.className = 'contact-info';
+            const index = document.getElementsByClassName('contact-info').length;
+
+            [
+                { name: 'contactName', placeholder: 'Contact Name' },
+                { name: 'contactPhone', placeholder: 'Contact Phone' }
+            ].forEach((i) => {
+                span.appendChild(createInput(index, i.name, i.placeholder));
+            });
+
+            const parent = contactInfo.parentNode;
+
+            if (contactInfo.nextSibling) {
+                parent.insertBefore(span, contactInfo.nextSibling);
+            }
+        });
+
+        $('#faculty-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            console.info('SUBMITTED');
+            $('#faculty-form').reset();
+        });
+    </script>
 </body>
 
 </html>
