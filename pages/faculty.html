@@ -86,7 +86,6 @@
         }
 
         $('#add-contact').addEventListener('click', () => {
-            console.info('CLICKED');
             const contactInfo = $('.contact-info');
             const span = document.createElement('span');
             span.className = 'contact-info';
@@ -99,10 +98,8 @@
                 span.appendChild(createInput(index, i.name, i.placeholder));
             });
 
-            const parent = contactInfo.parentNode;
-
             if (contactInfo.nextSibling) {
-                parent.insertBefore(span, contactInfo.nextSibling);
+                contactInfo.parentNode.insertBefore(span, contactInfo.nextSibling);
             }
         });
 
