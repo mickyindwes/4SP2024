@@ -59,6 +59,10 @@
                 </form>
             </div>
         </div>
+        <div id="faculty-popover" class="popover" popover>
+            <p>Successfully submitted!</p>
+            <button class="btn" popovertarget="faculty-popover" popovertargetaction="close">Close</button>
+        </div>
     </main>
     <footer>IWU</footer>
     <script>
@@ -105,7 +109,7 @@
 
         $('#faculty-form').addEventListener('submit', (event) => {
             event.preventDefault();
-            console.info('SUBMITTED');
+            $('#faculty-popover').showPopover();
             $('#faculty-form').reset();
         });
     </script>

@@ -188,3 +188,15 @@ span>input.input-text {
     margin: 20px 20px 20px 20px;
     text-align: center;
 }
+
+[popover] {
+    position: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border: 1px solid black;
+}

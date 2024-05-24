@@ -20,10 +20,19 @@
 #add-contact {
     width: auto;
     padding: 0 5px 0 5px;
+    margin-bottom: 10px;
 }
 
 .options {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.options > button {
+    margin: 10px 10px 10px 10px;
+}
+
+[popover] > p {
+    margin: 10px 10px 10px 10px;
 }
