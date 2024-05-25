@@ -37,12 +37,6 @@ header {
     justify-content: center;
 }
 
-/* header>a:last-child {
-    align-self: center;
-    justify-content: end;
-    margin-right: 20px;
-} */
-
 header,
 nav {
     background-color: royalblue;
@@ -60,7 +54,6 @@ nav {
 main {
     grid-area: main;
     min-height: 500px;
-    /* display: flex; */
 }
 
 footer {
@@ -120,7 +113,6 @@ img {
 .parents-content {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
 }
 
 .panel {
@@ -201,8 +193,21 @@ span>input.input-text {
     border: 1px solid black;
 }
 
-.video-player {
+.home-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.home-content>.left-content>h2 {
+    margin: 20px 0 0 20px;
+    color: darkslategrey;
+}
+
+.home-content>.left-content>.panel {
+    margin-top: 20px;
+}
+
+.home-content>.left-content>p {
+    padding: 10px 10px 10px 20px;
 }
