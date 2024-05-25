@@ -200,3 +200,9 @@ span>input.input-text {
     top: 50%;
     border: 1px solid black;
 }
+
+.video-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
