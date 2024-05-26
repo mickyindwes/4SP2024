@@ -1,7 +1,3 @@
-.about-text > h2 {
-    text-align: center;
-}
-
 .about-content {
     display: flex;
     flex-direction: row;

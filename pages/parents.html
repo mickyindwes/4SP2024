@@ -31,10 +31,15 @@
     <main>
         <div class="parents-content">
             <div class="panel">
+                <h2 class="page-title">Parents</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nostrum deleniti perferendis, modi ea
                     aspernatur quas magni tempora fugit, adipisci consectetur officiis repellat illo. At magni illum
                     deserunt provident. Ipsa!
+                    <br>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus dolores quod ut iste quia,
+                    aut autem, voluptatum earum ducimus temporibus ipsum ratione asperiores repellat consequatur culpa
+                    accusantium harum eos! Rem.
                 </p>
             </div>
             <form class="parent-form">
@@ -84,8 +89,8 @@
             const email = form[1].value || "";
             const feedback = document.querySelector('.feedback');
             const validRadioFeedback = form[2].checked || form[3].checked || form[4].checked;
-            
-            
+
+
             if (!validRadioFeedback) {
                 errorFeedback(feedback);
                 return;
