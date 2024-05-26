@@ -1,0 +1,32 @@
+.parents-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.parent-form {
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #99bee2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px 20px 20px;
+}
+
+.parent-form>span {
+    padding: 10px 0 10px 0;
+}
+
+.parent-form>span>input:first-child {
+    margin-right: 5px;
+}
+
+.parent-form>span>input:last-child {
+    margin-left: 5px;
+}
+
+.parent-form input {
+    border-radius: 5px;
+    border: 1px solid blue;
+}
