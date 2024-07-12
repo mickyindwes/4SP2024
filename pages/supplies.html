@@ -8,20 +8,16 @@
     <meta name="keywords" content="school, supply, kit, preschool, kindergarten, first grade">
     <meta name="author" content="Michael Hallabrin">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets//css//supplies.css">
+    <link rel="stylesheet" href="../assets/css/supplies.css">
+    <script src="../components/header.js" defer></script>
     <script src="../components/nav.js" defer></script>
     <title>School Supply Kit</title>
 </head>
 
 <body>
-    <header>
-        <a class="logo" href="../index.html">
-            <img src="../assets/images/header.png" alt="School Supply Header">
-            <div class="logo-title">
-                <h1>School Supply</h1>
-            </div>
-        </a>
-    </header>
+    <header-component path="../">
+        <img src="../assets/images/header.png" alt="School Supply Header" slot="header-image">
+    </header-component>
     <nav-component></nav-component>
     <main>
         <div class="supplies-content">
