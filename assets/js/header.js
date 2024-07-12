@@ -43,7 +43,7 @@ class Header extends HTMLElement {
                 }
             </style>
             <header>
-                <a class="logo" href="${path}index.html">
+                <a class="logo" href="index.html">
                     <slot name="header-image"></slot>
                     <div class="logo-title">
                         <h1>School Supply</h1>

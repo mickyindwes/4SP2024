@@ -7,7 +7,6 @@ class Nav extends HTMLElement {
   }
 
   render() {
-    const path = this.getAttribute("path") || '';
     const template = document.createElement("template");
     template.innerHTML = /*template*/`
       <style>
@@ -34,11 +33,11 @@ class Nav extends HTMLElement {
           }
       </style>
       <nav>
-          <a href="${path}about.html">About Us</a>
-          <a href="${path}parents.html">Parents</a>
-          <a href="${path}faculty.html">Faculty</a>
-          <a href="${path}supplies.html">Supplies</a>
-          <a href="${path}info.html">Request Info</a>
+          <a href="about.html">About Us</a>
+          <a href="parents.html">Parents</a>
+          <a href="faculty.html">Faculty</a>
+          <a href="supplies.html">Supplies</a>
+          <a href="info.html">Request Info</a>
       </nav>
     `;
 
