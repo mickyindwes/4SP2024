@@ -37,18 +37,9 @@ header {
     justify-content: center;
 }
 
-header,
-nav {
+header {
     background-color: royalblue;
     height: 40px;
-}
-
-nav {
-    grid-area: nav;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
 }
 
 main {
