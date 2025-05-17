@@ -8,27 +8,17 @@
     <meta name="author" content="Michael Hallabrin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/header.js" defer></script>
+    <script src="assets/js/nav.js" defer></script>
     <title>School Supply Kit</title>
 </head>
 
 <body>
-    <header>
-        <a class="logo" href="index.html">
-            <img src="assets/images/header.png" alt="School Supply Header">
-            <div class="logo-title">
-                <h1>School Supply</h1>
-            </div>
-        </a>
-    </header>
-    <nav>
-        <a href="pages/about.html">About Us</a>
-        <a href="pages/parents.html">Parents</a>
-        <a href="pages/faculty.html">Faculty</a>
-        <a href="pages/supplies.html">Supplies</a>
-        <a href="pages/info.html">Request Info</a>
-    </nav>
+    <header-component>
+        <img src="assets/images/header.png" alt="School Supply Header" slot="header-image">
+    </header-component>
+    <nav-component></nav-component>
     <main>
-        <div></div>
         <div class="home-content">
             <div class="left-content">
                 <h2>School Supply</h2>
@@ -61,12 +51,10 @@
                     The video tag is not supported by your browser. Please try another such as Edge or Chrome.
                 </video>
             </div>
-            <div>
-
-            </div>
         </div>
     </main>
     <footer>IWU</footer>
+    
 </body>
 
 </html>
